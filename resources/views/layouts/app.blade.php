@@ -32,11 +32,7 @@
                                 </form>
                             </li>
                         </ul>
-<!--                             
-                        <form action="{{route('posts.serch')}}" method="GET" class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="日付検索"  id="serch" name="serch" value="{{old('serch')}}">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">検索</button>
-                        </form> -->
+
                         @else
                         <a class="my-navbar-item text-white mr-2" href="{{ route('login') }}">ログイン</a>
                         <a class="my-navbar-item text-white" href="{{ route('register') }}">新規登録</a>
@@ -67,12 +63,6 @@
         <!-- 日本語化のための追加スクリプト -->
         <script src="https://npmcdn.com/flatpickr/dist/l10n/ja.js"></script>
 
-       <!-- <script>
-            flatpickr(document.getElementById('serch'), {
-            locale: 'ja',
-            dateFormat: "Y/m/d",
-            // minDate: new Date()
-        });
-       </script> -->
+    
     </body>
 </html>

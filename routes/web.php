@@ -21,9 +21,7 @@ Route::group(['middleware'=>'auth'],function(){
 
     Route::get('/', 'HomeController@index')->name('home');
 
-    //検索フォーム用
-    Route::get('posts/serch','PostsController@serch')->name('posts.serch');
-
+    
     Route::group(['prefix'=>'posts'],function(){
         Route::get('index','PostsController@index')->name('posts.index'); 
         Route::get('create','PostsController@create')->name('posts.create');
