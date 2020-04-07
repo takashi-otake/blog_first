@@ -3,7 +3,7 @@
 @section('content')
    
 <nav class="card">
-    <div class="card-header">会員登録</div>
+    <div class="card-header">新規登録</div>
     <div class="card-body">
         @if($errors->any())
             <div class="alert alert-danger">

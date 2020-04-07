@@ -11,7 +11,7 @@
     <body>
         <header class="mb-4">
             <nav class="navbar navbar-expand-sm navbar-light bg-secondary">
-                <a class="navbar-brand text-white" href="#">Daialy <i class="fas fa-book"></i></a>
+                <a class="navbar-brand text-white" href="#">Diary <i class="fas fa-book"></i></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
