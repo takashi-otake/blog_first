@@ -20,7 +20,7 @@
                         @if(Auth::check())
                         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                             <li class="nav-item active">
-                                <a class="nav-link text-white" href="{{route('posts.index')}}">Home</a>
+                                <a class="nav-link text-white" href="{{route('posts.index')}}">投稿一覧へ</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="/">{{Auth::user()->name}}</a>
@@ -32,6 +32,10 @@
                                 </form>
                             </li>
                         </ul>
+                        <form action="{{route('posts.serch')}}" method="GET" class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="日付検索"  id="serch" name="serch" value="{{old('serch')}}">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">検索</button>
+                        </form>
 
                         @else
                         <a class="my-navbar-item text-white mr-2" href="{{ route('login') }}">ログイン</a>
@@ -62,6 +66,13 @@
         <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
         <!-- 日本語化のための追加スクリプト -->
         <script src="https://npmcdn.com/flatpickr/dist/l10n/ja.js"></script>
+         <script>
+            flatpickr(document.getElementById('serch'), {
+            locale: 'ja',
+            dateFormat: "Y-m-d",
+            // minDate: new Date()
+        });
+       </script>
 
     
     </body>

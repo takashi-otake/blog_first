@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB; //追加
 
 class PostsController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         // 検索フォーム用
         // $serch= $request->input('serch');
@@ -121,10 +121,19 @@ class PostsController extends Controller
 
     public function serch(Request $request)
     {
-     $serch = $request->input('serch');
-     $query = Post::where('created_at','LIKE',"%{$serch}%")->get();
+        $posts =  Auth::user()
+                ->posts()
+                ->whereDate('created_at',$request->serch)
+                ->orderBy('created_at','desc')
+                ->paginate(5);
+        // dd($posts);
 
-     dd($query);
-       
+        $serch_result = $request->serch.'の検索結果'.count($posts).'件';
+        
+        return view('posts.index',[
+            'posts'=>$posts,
+            'serch_result'=>$serch_result,
+        ]);
     }
+
 }

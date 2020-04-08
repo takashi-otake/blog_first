@@ -8,7 +8,7 @@
             {{$post->body}}
         </div>
         <div class="card-footer">
-           投稿日時：{{$post->created_at->format('Y/m/d')}}
+           投稿日時：{{$post->created_at->format('Y-m-d')}}
         </div>
    </div>
    <div class="container">
